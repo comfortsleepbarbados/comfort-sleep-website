@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Comfort Sleep - Premium Mattresses & Sleep Solutions",
-  description: "Experience the perfect night's sleep with Comfort Sleep premium mattresses and sleep products.",
+  title: "Comfort Sleep Barbados | Caribbean Hospitality Mattresses",
+  description: "Premium mattresses engineered for Caribbean hotels. Tariff-free pricing, 2-3 week delivery, and 7-year commercial warranty. Serving 250+ properties across 12 islands.",
 };
 
 export default function RootLayout({
@@ -15,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Navigation />
         {children}
+        <Footer />
         <Script id="zoho-salesiq-init" strategy="beforeInteractive">
           {`window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}
         </Script>
