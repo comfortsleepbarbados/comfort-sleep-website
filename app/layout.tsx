@@ -4,6 +4,7 @@ import NavigationClient from '@/components/NavigationClient';
 import FooterClient from '@/components/FooterClient';
 import StructuredData from '@/components/StructuredData';
 import ZohoChat from '@/components/ZohoChat';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 export const metadata: Metadata = {
   title: {
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <GoogleAnalytics />
         <StructuredData />
         <div className="min-h-screen bg-white">
           <NavigationClient />
