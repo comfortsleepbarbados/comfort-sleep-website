@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import './globals.css';
 import NavigationClient from '@/components/NavigationClient';
 import FooterClient from '@/components/FooterClient';
 import StructuredData from '@/components/StructuredData';
+import ZohoChat from '@/components/ZohoChat';
 
 export const metadata: Metadata = {
   title: {
@@ -35,14 +35,7 @@ export default function RootLayout({
           <main>{children}</main>
           <FooterClient />
         </div>
-        <Script id="zoho-salesiq-init" strategy="lazyOnload">
-          {`window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}
-        </Script>
-        <Script
-          id="zsiqscript"
-          src="https://salesiq.zohopublic.com/widget?wc=siq7b12bf2645f0015959a7277b6a516250bad82253681eace08e47bcc756236f2e"
-          strategy="lazyOnload"
-        />
+        <ZohoChat />
       </body>
     </html>
   );
