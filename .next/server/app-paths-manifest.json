@@ -3,5 +3,6 @@
   "/products/page": "app/products/page.js",
   "/hotel-line/page": "app/hotel-line/page.js",
   "/blog/page": "app/blog/page.js",
-  "/warranty/page": "app/warranty/page.js"
+  "/warranty/page": "app/warranty/page.js",
+  "/contact/page": "app/contact/page.js"
 }
