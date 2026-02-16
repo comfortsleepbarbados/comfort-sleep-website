@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   },
   description: 'Caribbean\'s premier supplier of climate-engineered hospitality mattresses. EPA & ISO certified, 7-year warranty, trusted by Marriott and luxury resorts.',
   keywords: ['hospitality mattresses', 'Caribbean mattresses', 'hotel mattresses', 'Barbados', 'climate-engineered', 'EPA certified', 'ISO 9001'],
+  verification: {
+    google: '--WIOwdNqzHphINOlNPKzWx-Aqo1R4srJfED2RHyhPA',
+  },
   openGraph: {
     title: 'Comfort Sleep Barbados | Premium Hospitality Mattresses',
     description: 'Caribbean\'s premier supplier of climate-engineered hospitality mattresses',
