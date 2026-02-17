@@ -27,23 +27,29 @@ const hotelProducts = [
     idealFor: 'Guesthouses, Budget Hotels, Vacation Rentals',
     gallery: {
       mainImage: {
-        large: 'https://picsum.photos/id/1018/1200/900',
-        thumb: 'https://picsum.photos/id/1018/800/600',
-        alt: 'Hotel Comfort - Main View',
+        large: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200',
+        thumb: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600',
+        alt: 'Hotel Comfort mattress - main view',
         description: 'Hotel Comfort - Soft, inviting feel perfect for leisure-focused resorts'
       },
       thumbnails: [
         {
-          large: 'https://picsum.photos/id/1025/1200/900',
-          thumb: 'https://picsum.photos/id/1025/400/300',
-          alt: 'Hotel Comfort - Detail',
+          large: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200',
+          thumb: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400',
+          alt: 'Hotel Comfort - fabric detail',
           description: 'Close-up of plush comfort layers and fabric detail'
         },
         {
-          large: 'https://picsum.photos/id/1019/1200/900',
-          thumb: 'https://picsum.photos/id/1019/400/300',
-          alt: 'Hotel Comfort - Side View',
+          large: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200',
+          thumb: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400',
+          alt: 'Hotel Comfort - side view',
           description: 'Side view showing pocketed coil construction'
+        },
+        {
+          large: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200',
+          thumb: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400',
+          alt: 'Hotel Comfort - in hotel room',
+          description: 'Hotel Comfort in resort bedroom setting'
         }
       ]
     }
@@ -69,23 +75,29 @@ const hotelProducts = [
     idealFor: 'Boutique Hotels, Resort Properties, 4-Star Establishments',
     gallery: {
       mainImage: {
-        large: 'https://picsum.photos/id/1026/1200/900',
-        thumb: 'https://picsum.photos/id/1026/800/600',
-        alt: 'Hotel Elite - Main View',
+        large: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200',
+        thumb: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600',
+        alt: 'Hotel Elite mattress - main view',
         description: 'Hotel Elite - Premium pillow-top for upscale accommodations'
       },
       thumbnails: [
         {
-          large: 'https://picsum.photos/id/1027/1200/900',
-          thumb: 'https://picsum.photos/id/1027/400/300',
-          alt: 'Hotel Elite - Detail',
+          large: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=1200',
+          thumb: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=400',
+          alt: 'Hotel Elite - pillow top detail',
           description: 'Multi-layer pillow top construction detail'
         },
         {
-          large: 'https://picsum.photos/id/1028/1200/900',
-          thumb: 'https://picsum.photos/id/1028/400/300',
-          alt: 'Hotel Elite - Side View',
+          large: 'https://images.unsplash.com/photo-1631049035374-b16023ce69e5?w=1200',
+          thumb: 'https://images.unsplash.com/photo-1631049035374-b16023ce69e5?w=400',
+          alt: 'Hotel Elite - side view',
           description: 'Side profile showing reinforced coil system'
+        },
+        {
+          large: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200',
+          thumb: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400',
+          alt: 'Hotel Elite - luxury bedroom',
+          description: 'Hotel Elite in premium suite setting'
         }
       ]
     }
@@ -111,23 +123,29 @@ const hotelProducts = [
     idealFor: 'Luxury Resorts, 5-Star Hotels, Premium Villas',
     gallery: {
       mainImage: {
-        large: 'https://picsum.photos/id/1031/1200/900',
-        thumb: 'https://picsum.photos/id/1031/800/600',
-        alt: 'Hotel Luxury - Main View',
+        large: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1200',
+        thumb: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600',
+        alt: 'Hotel Luxury mattress - main view',
         description: 'Hotel Luxury - Firm back support for optimal spinal alignment'
       },
       thumbnails: [
         {
-          large: 'https://picsum.photos/id/1032/1200/900',
-          thumb: 'https://picsum.photos/id/1032/400/300',
-          alt: 'Hotel Luxury - Detail',
+          large: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200',
+          thumb: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400',
+          alt: 'Hotel Luxury - support detail',
           description: 'Heavy-duty coil system for firm support'
         },
         {
-          large: 'https://picsum.photos/id/1033/1200/900',
-          thumb: 'https://picsum.photos/id/1033/400/300',
-          alt: 'Hotel Luxury - Side View',
+          large: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200',
+          thumb: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400',
+          alt: 'Hotel Luxury - side view',
           description: 'Commercial-grade quilting and construction'
+        },
+        {
+          large: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200',
+          thumb: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400',
+          alt: 'Hotel Luxury - hotel room',
+          description: 'Hotel Luxury in business hotel setting'
         }
       ]
     }
