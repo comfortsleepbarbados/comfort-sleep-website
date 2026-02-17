@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import Script from 'next/script';
+import { useEffect, useRef, useState } from 'react';
 
 interface GalleryImage {
   large: string;
@@ -25,46 +24,76 @@ declare global {
 
 export default function ProductGallery({ productId, productName, mainImage, thumbnails }: ProductGalleryProps) {
   const lightboxRef = useRef<any>(null);
-  const galleryInitialized = useRef(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const initGallery = () => {
-      if (typeof window !== 'undefined' && window.GLightbox && !galleryInitialized.current) {
-        try {
-          lightboxRef.current = window.GLightbox({
-            touchNavigation: true,
-            loop: true,
-            autoplayVideos: false,
-            closeButton: true,
-            openEffect: 'zoom',
-            closeEffect: 'fade',
-            slideEffect: 'slide',
-            cssEffects: {
-              fade: { in: 'fadeIn', out: 'fadeOut' },
-              zoom: { in: 'zoomIn', out: 'zoomOut' }
-            },
-            skin: 'modern'
-          });
-          galleryInitialized.current = true;
-        } catch (error) {
-          console.error('Error initializing GLightbox:', error);
-        }
+    const loadGLightbox = () => {
+      if (document.getElementById('glightbox-css') && document.getElementById('glightbox-js')) {
+        return;
       }
+
+      const css = document.createElement('link');
+      css.id = 'glightbox-css';
+      css.rel = 'stylesheet';
+      css.href = 'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css';
+      document.head.appendChild(css);
+
+      const script = document.createElement('script');
+      script.id = 'glightbox-js';
+      script.src = 'https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js';
+      script.async = true;
+      script.onload = () => {
+        setIsLoaded(true);
+      };
+      document.head.appendChild(script);
     };
 
-    if (typeof window !== 'undefined' && window.GLightbox) {
-      initGallery();
-    }
+    loadGLightbox();
+  }, []);
 
-    const checkInterval = setInterval(() => {
-      if (typeof window !== 'undefined' && window.GLightbox) {
-        initGallery();
-        clearInterval(checkInterval);
+  useEffect(() => {
+    if (!isLoaded || !window.GLightbox) return;
+
+    const initTimeout = setTimeout(() => {
+      try {
+        if (lightboxRef.current) {
+          try {
+            lightboxRef.current.destroy();
+          } catch (e) {
+            console.warn('Error destroying previous GLightbox:', e);
+          }
+        }
+
+        const galleryElements = document.querySelectorAll(`[data-gallery="${productId}"]`);
+
+        if (galleryElements.length === 0) {
+          console.warn('No gallery elements found for:', productId);
+          return;
+        }
+
+        lightboxRef.current = window.GLightbox({
+          selector: `[data-gallery="${productId}"]`,
+          touchNavigation: true,
+          loop: true,
+          autoplayVideos: false,
+          closeButton: true,
+          openEffect: 'zoom',
+          closeEffect: 'fade',
+          slideEffect: 'slide',
+          cssEffects: {
+            fade: { in: 'fadeIn', out: 'fadeOut' },
+            zoom: { in: 'zoomIn', out: 'zoomOut' }
+          }
+        });
+
+        console.log('GLightbox initialized for:', productId, 'with', galleryElements.length, 'images');
+      } catch (error) {
+        console.error('Error initializing GLightbox:', error);
       }
-    }, 100);
+    }, 200);
 
     return () => {
-      clearInterval(checkInterval);
+      clearTimeout(initTimeout);
       if (lightboxRef.current) {
         try {
           lightboxRef.current.destroy();
@@ -73,16 +102,10 @@ export default function ProductGallery({ productId, productName, mainImage, thum
         }
       }
     };
-  }, []);
+  }, [isLoaded, productId]);
 
   return (
     <>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-      <Script
-        src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"
-        strategy="afterInteractive"
-      />
-
       <div className="product-gallery">
         <div className="gallery-main">
           <a
