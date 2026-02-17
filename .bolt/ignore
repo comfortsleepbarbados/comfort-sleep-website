@@ -1,0 +1,10 @@
+node_modules/**
+dist/**
+out/**
+.next/**
+build/**
+chunks/**
+*.tsbuildinfo
+*.log
+*.lock
+*.zip
