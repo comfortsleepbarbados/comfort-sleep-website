@@ -90,11 +90,11 @@ export default function ThankYou() {
                   +1 (246) 228-7378
                 </a>
                 <a
-                  href="mailto:deliversleep@comfortsleepbarbados.com"
+                  href="mailto:info@comfortsleepdistribution.com"
                   className="inline-flex items-center justify-center text-[#25278C] hover:underline"
                 >
                   <Mail className="w-4 h-4 mr-2" />
-                  deliversleep@comfortsleepbarbados.com
+                  info@comfortsleepdistribution.com
                 </a>
               </div>
             </div>

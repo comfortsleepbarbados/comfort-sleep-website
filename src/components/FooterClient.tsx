@@ -101,8 +101,8 @@ export default function FooterClient() {
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-gray-400" />
-                <a href="mailto:deliversleep@comfortsleepbarbados.com" className="text-gray-400 hover:text-white transition-colors">
-                  deliversleep@comfortsleepbarbados.com
+                <a href="mailto:info@comfortsleepdistribution.com" className="text-gray-400 hover:text-white transition-colors">
+                  info@comfortsleepdistribution.com
                 </a>
               </li>
             </ul>

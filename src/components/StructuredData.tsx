@@ -14,7 +14,7 @@ export default function StructuredData() {
       "addressRegion": "Barbados"
     },
     "telephone": "+1-246-228-7378",
-    "email": "deliversleep@comfortsleepbarbados.com",
+    "email": "info@comfortsleepdistribution.com",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Sales",

@@ -23,7 +23,7 @@ const hotelProducts = [
       firmness: 'Medium-Firm'
     },
     idealFor: 'Guesthouses, Budget Hotels, Vacation Rentals',
-    image: 'https://drive.google.com/file/d/1FgRflKagnvBrfjaQawLxmZkeQfKeL52N/view?usp=share_link'
+    image: 'https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=compress&cs=tinysrgb&w=1200'
   },
   {
     name: 'Hotel Elite',
