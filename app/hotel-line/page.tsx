@@ -2,11 +2,9 @@
 
 import Link from 'next/link';
 import { Check, Shield, Award, TrendingUp, Clock, Building2, Truck, Users } from 'lucide-react';
-import ProductGallery from '@/components/ProductGallery';
 
 const hotelProducts = [
   {
-    id: 'hotel-comfort',
     name: 'Hotel Comfort',
     tier: 'Entry Level',
     description: 'Reliable comfort for budget-conscious properties',
@@ -25,37 +23,9 @@ const hotelProducts = [
       firmness: 'Medium-Firm'
     },
     idealFor: 'Guesthouses, Budget Hotels, Vacation Rentals',
-    gallery: {
-      mainImage: {
-        large: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200',
-        thumb: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600',
-        alt: 'Hotel Comfort mattress - main view',
-        description: 'Hotel Comfort - Soft, inviting feel perfect for leisure-focused resorts'
-      },
-      thumbnails: [
-        {
-          large: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200',
-          thumb: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400',
-          alt: 'Hotel Comfort - fabric detail',
-          description: 'Close-up of plush comfort layers and fabric detail'
-        },
-        {
-          large: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200',
-          thumb: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400',
-          alt: 'Hotel Comfort - side view',
-          description: 'Side view showing pocketed coil construction'
-        },
-        {
-          large: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200',
-          thumb: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400',
-          alt: 'Hotel Comfort - in hotel room',
-          description: 'Hotel Comfort in resort bedroom setting'
-        }
-      ]
-    }
+    image: 'https://drive.google.com/file/d/1FgRflKagnvBrfjaQawLxmZkeQfKeL52N/view?usp=share_link'
   },
   {
-    id: 'hotel-elite',
     name: 'Hotel Elite',
     tier: 'Premium',
     description: 'Superior comfort for upscale hospitality',
@@ -73,37 +43,9 @@ const hotelProducts = [
       firmness: 'Medium'
     },
     idealFor: 'Boutique Hotels, Resort Properties, 4-Star Establishments',
-    gallery: {
-      mainImage: {
-        large: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200',
-        thumb: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600',
-        alt: 'Hotel Elite mattress - main view',
-        description: 'Hotel Elite - Premium pillow-top for upscale accommodations'
-      },
-      thumbnails: [
-        {
-          large: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=1200',
-          thumb: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=400',
-          alt: 'Hotel Elite - pillow top detail',
-          description: 'Multi-layer pillow top construction detail'
-        },
-        {
-          large: 'https://images.unsplash.com/photo-1631049035374-b16023ce69e5?w=1200',
-          thumb: 'https://images.unsplash.com/photo-1631049035374-b16023ce69e5?w=400',
-          alt: 'Hotel Elite - side view',
-          description: 'Side profile showing reinforced coil system'
-        },
-        {
-          large: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200',
-          thumb: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400',
-          alt: 'Hotel Elite - luxury bedroom',
-          description: 'Hotel Elite in premium suite setting'
-        }
-      ]
-    }
+    image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1200'
   },
   {
-    id: 'hotel-luxury',
     name: 'Hotel Luxury',
     tier: 'Ultra-Premium',
     description: 'Exceptional comfort for luxury resorts',
@@ -121,34 +63,7 @@ const hotelProducts = [
       firmness: 'Plush Medium'
     },
     idealFor: 'Luxury Resorts, 5-Star Hotels, Premium Villas',
-    gallery: {
-      mainImage: {
-        large: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1200',
-        thumb: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600',
-        alt: 'Hotel Luxury mattress - main view',
-        description: 'Hotel Luxury - Firm back support for optimal spinal alignment'
-      },
-      thumbnails: [
-        {
-          large: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200',
-          thumb: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400',
-          alt: 'Hotel Luxury - support detail',
-          description: 'Heavy-duty coil system for firm support'
-        },
-        {
-          large: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200',
-          thumb: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400',
-          alt: 'Hotel Luxury - side view',
-          description: 'Commercial-grade quilting and construction'
-        },
-        {
-          large: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200',
-          thumb: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400',
-          alt: 'Hotel Luxury - hotel room',
-          description: 'Hotel Luxury in business hotel setting'
-        }
-      ]
-    }
+    image: 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1200'
   }
 ];
 
@@ -252,22 +167,21 @@ export default function HotelLine() {
             {hotelProducts.map((product, index) => (
               <div
                 key={index}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}
               >
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="mb-4">
-                    <div className="inline-block bg-[#25278C] text-white px-4 py-2 rounded-lg font-semibold mb-4">
+                  <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 left-4 bg-[#25278C] text-white px-4 py-2 rounded-lg font-semibold">
                       {product.tier}
                     </div>
                   </div>
-                  <ProductGallery
-                    productId={product.id}
-                    productName={product.name}
-                    mainImage={product.gallery.mainImage}
-                    thumbnails={product.gallery.thumbnails}
-                  />
                 </div>
 
                 <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
