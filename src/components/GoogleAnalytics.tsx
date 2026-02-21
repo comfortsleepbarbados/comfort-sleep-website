@@ -1,33 +1,20 @@
-'use client';
-
-import { useEffect } from 'react';
+import Script from 'next/script';
 
 export default function GoogleAnalytics() {
-  useEffect(() => {
-    // Load the Google Analytics script
-    const script = document.createElement('script');
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-S15R873GDW';
-    script.async = true;
-    document.head.appendChild(script);
-
-    // Initialize gtag
-    script.onload = () => {
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      function gtag(...args: any[]) {
-        (window as any).dataLayer.push(args);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-S15R873GDW');
-    };
-
-    return () => {
-      // Cleanup: remove the script when component unmounts
-      const existingScript = document.querySelector('script[src*="googletagmanager.com/gtag"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, []);
-
-  return null;
+  return (
+    <>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-S15R873GDW"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S15R873GDW');
+        `}
+      </Script>
+    </>
+  );
 }
