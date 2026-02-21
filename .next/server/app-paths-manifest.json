@@ -1,7 +1,4 @@
 {
-  "/warranty/page": "app/warranty/page.js",
-  "/about/page": "app/about/page.js",
   "/page": "app/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/contact/thank-you/page": "app/contact/thank-you/page.js"
+  "/contact/page": "app/contact/page.js"
 }
