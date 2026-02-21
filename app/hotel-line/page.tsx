@@ -23,7 +23,7 @@ const hotelProducts = [
       firmness: 'Medium-Firm'
     },
     idealFor: 'Guesthouses, Budget Hotels, Vacation Rentals',
-    image: 'https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=compress&cs=tinysrgb&w=1200'
+    image: 'https://drive.google.com/file/d/1LMRei_HTgy1BpT-a6oE_PF2K_Lkp4Grr/view?usp=sharing'
   },
   {
     name: 'Hotel Elite',
@@ -43,7 +43,7 @@ const hotelProducts = [
       firmness: 'Medium'
     },
     idealFor: 'Boutique Hotels, Resort Properties, 4-Star Establishments',
-    image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1200'
+    image: 'https://drive.google.com/file/d/1tNDCZkXJmotidPbWUeOXaCLx2KmxgPp7/view?usp=share_link'
   },
   {
     name: 'Hotel Luxury',
@@ -63,7 +63,7 @@ const hotelProducts = [
       firmness: 'Plush Medium'
     },
     idealFor: 'Luxury Resorts, 5-Star Hotels, Premium Villas',
-    image: 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1200'
+    image: 'https://drive.google.com/file/d/1CJBHCryZUtZh3wntMIrLfDEQeNteyaLn/view?usp=share_link'
   }
 ];
 
