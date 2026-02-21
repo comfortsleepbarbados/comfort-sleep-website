@@ -9,7 +9,6 @@ import { QuoteFormData } from '@/types';
 import { validateQuoteForm, ValidationError } from '@/lib/validation';
 import { contactInfo } from '@/data/contact';
 
-
 export default function Contact() {
   const router = useRouter();
   const [formData, setFormData] = useState<QuoteFormData>({
@@ -64,11 +63,35 @@ export default function Contact() {
         throw new Error(submitError.message || 'Failed to submit form');
       }
 
+      const web3Data = new FormData();
+      web3Data.append('access_key', '48f8f777-acaa-4480-9540-0352cdfe4518');
+      web3Data.append('subject', 'New Contact Form Submission - Comfort Sleep Distribution');
+      web3Data.append('from_name', 'Comfort Sleep Website');
+      web3Data.append('name', formData.name);
+      web3Data.append('email', formData.email);
+      web3Data.append('phone', formData.phone || '');
+      web3Data.append('company', formData.property_name || '');
+      web3Data.append('property_type', formData.property_type);
+      web3Data.append('room_count', formData.room_count || '');
+      web3Data.append('inquiry_type', formData.inquiry_type);
+      web3Data.append('message', formData.message);
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: web3Data,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        console.warn('Web3Forms notification failed:', result.message);
+      }
+
       router.push('/contact/thank-you');
     } catch (err) {
       console.error('Error submitting form:', err);
       const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
-      setError(`Unable to submit your request: ${errorMessage}. Please try again or contact us directly at ${contactInfo.email}`);
+      setError(`Unable to submit your request: ${errorMessage}. Please try again or contact us directly at info@comfortsleepdistribution.com or call +1 (246) 228-REST (7378).`);
     } finally {
       setIsSubmitting(false);
     }
@@ -111,7 +134,7 @@ export default function Contact() {
                   Fill out the form below and our team will respond within 24 hours with pricing and availability.
                 </p>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -291,7 +314,7 @@ export default function Contact() {
                     className="w-full bg-[#25278C] hover:bg-[#1a1c66] text-white py-4 rounded-lg font-semibold transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
-                      'Submitting...'
+                      'Sending...'
                     ) : (
                       <>
                         <Send className="w-5 h-5 mr-2" />
@@ -331,9 +354,6 @@ export default function Contact() {
                         <a href="tel:+12462287378" className="hover:text-[#25278C] block">
                           +1 (246) 228-7378 (228-REST)
                         </a>
-                        <a href="tel:+12462357254" className="hover:text-[#25278C] block">
-                          +1 (246) 235-2754
-                        </a>
                         <a href="tel:+12462667378" className="hover:text-[#25278C] block">
                           +1 (246) 266-7378 (266-REST)
                         </a>
@@ -345,8 +365,8 @@ export default function Contact() {
                     <Mail className="w-6 h-6 text-[#25278C] mr-3 flex-shrink-0 mt-1" />
                     <div>
                       <div className="font-semibold text-gray-900 mb-1">Email</div>
-                      <a href="mailto:deliversleep@comfortsleepbarbados.com" className="text-gray-600 hover:text-[#25278C]">
-                        deliversleep@comfortsleepbarbados.com
+                      <a href="mailto:info@comfortsleepdistribution.com" className="text-gray-600 hover:text-[#25278C]">
+                        info@comfortsleepdistribution.com
                       </a>
                     </div>
                   </div>
