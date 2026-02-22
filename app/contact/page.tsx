@@ -58,8 +58,7 @@ export default function Contact() {
       const supabase = getSupabaseClient();
       const { error: submitError } = await supabase
         .from('quote_requests')
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .insert([formData] as any);
+        .insert([formData]);
 
       if (submitError) {
         console.error('Supabase error:', submitError);
