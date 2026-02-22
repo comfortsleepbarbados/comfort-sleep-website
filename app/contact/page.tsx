@@ -56,7 +56,7 @@ export default function Contact() {
 
     try {
       const supabase = getSupabaseClient();
-      const { error: submitError } = await supabase
+      const { error: submitError } = await (supabase as any)
         .from('quote_requests')
         .insert([formData]);
 
