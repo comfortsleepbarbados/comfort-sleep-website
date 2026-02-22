@@ -1,7 +1,7 @@
 {
   "/warranty/page": "app/warranty/page.js",
   "/contact/page": "app/contact/page.js",
-  "/pilot-program/page": "app/pilot-program/page.js",
+  "/hotel-line/page": "app/hotel-line/page.js",
   "/about/page": "app/about/page.js",
   "/blog/page": "app/blog/page.js",
   "/page": "app/page.js"
